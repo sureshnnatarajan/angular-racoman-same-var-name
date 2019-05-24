@@ -1,0 +1,15 @@
+<h3>{{ name }}</h3>
+<h4>Problem:</h4> 
+<div>Same variable name for two text area. One is hidden and the other is visible.</div>
+<div>Expected Result : Value entered in visible text box should be alerted.</div>
+<div>Actual Result:Value comes as empty</div>
+
+<form [formGroup]="textAreaForm" novalidate>
+  <h5>First Text Area </h5>
+  <textarea class="form-control" rows="5" #commentsText></textarea>
+  <br />
+  <h5>Second Text Area - This is hidden but has same variable name</h5>
+  <textarea class="form-control" rows="5" #commentsText style="visibility: hidden;"></textarea>
+  <br />
+  <input type="button" (click)="clickSubmit(commentsText.value)" value="Click">
+</form>
